@@ -5,14 +5,14 @@ using System.Globalization;
 
 namespace Task
 {
-    public partial class Form1 : Form
+    public partial class FormEnter : Form
     {
-        public Form1()
+        public FormEnter()
         {
             InitializeComponent();
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
             save.Filter = "Текстовый документ (*.txt)|*.txt|Все файлы (*.*)|*.*";
@@ -46,7 +46,7 @@ namespace Task
             textBoxInfo.Clear();
         }
 
-        private void comboBoxDay_Click(object sender, EventArgs e)
+        private void ComboBoxDay_Click(object sender, EventArgs e)
         {
             for (int i = 1; i < 32; i++)
             {
@@ -57,7 +57,7 @@ namespace Task
             }
         }
 
-        private void comboBoxYear_Click(object sender, EventArgs e)
+        private void ComboBoxYear_Click(object sender, EventArgs e)
         {
             for (int i = DateTime.Now.Year; i > 1940; i--)
             {
@@ -68,7 +68,7 @@ namespace Task
             }
         }
 
-        private void comboBoxMonth_Click(object sender, EventArgs e)
+        private void ComboBoxMonth_Click(object sender, EventArgs e)
         {
             for (int i = 1; i <= 12; i++)
             {

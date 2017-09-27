@@ -1,6 +1,6 @@
 ﻿namespace Task
 {
-    partial class Form1
+    partial class FormEnter
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -124,7 +124,7 @@
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // labelName
             // 
@@ -167,7 +167,7 @@
             this.comboBoxDay.Name = "comboBoxDay";
             this.comboBoxDay.Size = new System.Drawing.Size(50, 23);
             this.comboBoxDay.TabIndex = 14;
-            this.comboBoxDay.Click += new System.EventHandler(this.comboBoxDay_Click);
+            this.comboBoxDay.Click += new System.EventHandler(this.ComboBoxDay_Click);
             // 
             // comboBoxMonth
             // 
@@ -178,7 +178,7 @@
             this.comboBoxMonth.Name = "comboBoxMonth";
             this.comboBoxMonth.Size = new System.Drawing.Size(121, 23);
             this.comboBoxMonth.TabIndex = 15;
-            this.comboBoxMonth.Click += new System.EventHandler(this.comboBoxMonth_Click);
+            this.comboBoxMonth.Click += new System.EventHandler(this.ComboBoxMonth_Click);
             // 
             // comboBoxYear
             // 
@@ -191,7 +191,7 @@
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(93, 23);
             this.comboBoxYear.TabIndex = 16;
-            this.comboBoxYear.Click += new System.EventHandler(this.comboBoxYear_Click);
+            this.comboBoxYear.Click += new System.EventHandler(this.ComboBoxYear_Click);
             // 
             // labelDay
             // 
@@ -278,7 +278,7 @@
             this.groupBoxBirthday.TabStop = false;
             this.groupBoxBirthday.Text = "Дата рождения";
             // 
-            // Form1
+            // FormEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -296,7 +296,7 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.textBoxSurname);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Name = "Form1";
+            this.Name = "FormEnter";
             this.Text = "Ввод данных";
             this.groupBoxSex.ResumeLayout(false);
             this.groupBoxSex.PerformLayout();
