@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Globalization;
 
 namespace Task
 {
@@ -25,20 +19,30 @@ namespace Task
 
             if (save.ShowDialog() == DialogResult.OK)
             {
-                StreamWriter streamWriter = new StreamWriter(save.FileName);
+                StreamWriter streamWriter = new StreamWriter(save.FileName, true);
                 streamWriter.WriteLine(labelSurname.Text + ": " + textBoxSurname.Text);
                 streamWriter.WriteLine(labelName.Text + ": " + textBoxName.Text);
                 streamWriter.WriteLine(labelMiddleName.Text + ": " + textBoxMiddleName.Text);
-                streamWriter.WriteLine("Пол: " + comboBoxSex.Text);
-               // streamWriter.WriteLine(labelBirthday.Text + ": " + dateTimePicker.Text);
+
+                if (radioButtonMale.Checked)
+                {
+                    streamWriter.WriteLine(groupBoxSex.Text + ": " + radioButtonMale.Text);
+                }
+                else if (radioButtonFemale.Checked)
+                {
+                    streamWriter.WriteLine(groupBoxSex.Text + ": " + radioButtonFemale.Text);
+                } 
+
+                streamWriter.WriteLine(groupBoxBirthday.Text + ": " + comboBoxDay.Text + " " + 
+                                        comboBoxMonth.Text.ToLower() + " " + comboBoxYear.Text + " год");
                 streamWriter.WriteLine("Семейный статус: " + comboBoxStatus.Text);
                 streamWriter.WriteLine(labelInfo.Text + ": "+ textBoxInfo.Text);
+                streamWriter.WriteLine("\n");
                 streamWriter.Close();
             }
             textBoxName.Clear();
             textBoxSurname.Clear();
             textBoxMiddleName.Clear();
-            //dateTimePicker.ResetText();
             textBoxInfo.Clear();
         }
 
@@ -60,6 +64,17 @@ namespace Task
                 if (comboBoxYear.Items.Count < DateTime.Now.Year - 1940)
                 {
                     comboBoxYear.Items.Add(i);
+                }
+            }
+        }
+
+        private void comboBoxMonth_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= 12; i++)
+            {
+                if (comboBoxMonth.Items.Count < 12)
+                {
+                    comboBoxMonth.Items.Add(CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i).ToString());
                 }
             }
         }
